@@ -1,19 +1,32 @@
-#include "printer.h"
+#include "main.h"
 
 int _printf(const char *format, ...)
 {
-	int size;
-	va_list list;
-	char *pointer;
-	char *s;
+	const char *p;
+	int i = 0;
+	va_list pointer;
 
-	if (format == NULL)
+	if (!format)
 		return (-1);
 	
-	size = _strlen(format);
-	
-	if (size <= 0)
-		return (0);
-
-	va_start(list, format);
+	va_start(pointer, format);
+	for (p = format; *p != NULL, p++)
+	{
+		if (*p != '%')
+		{
+			_putchar(*p, &i)
+			continue;
+		}
+		p++;
+		if (p == NULL)
+      return (NULL);
+		else if (p == 'c' || 's')
+			return (printChar);
+		else if (p == 'd' || 'i')
+			return (printNum);
+		else if (p == '%')
+			return (printSym);
+		va_end(pointer);
+		return (i);
+	}
 }
