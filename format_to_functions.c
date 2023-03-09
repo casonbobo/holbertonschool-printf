@@ -15,12 +15,18 @@ int (*format_to_function(char *format))
 		{"s", print_string},
 		{"d", print_digit},
 		{"i", print_integer},
+		{"c", print_char},
+		{"%s", print_stringPointer},
+		{"%d", print_digitPointer},
+		{"%i",print_integerPointer},
+		{"%c", print_charPointer},
 		{NULL, NULL}
 	};
 
 	int index = 0;
 
 	if ()/*check that there is a character that is pointed to*/
+		/*and if the character read is a % sign (it is a pointer)*/
 		return (NULL);
 
 	while /*loop thru the array above until you find the*/
