@@ -25,7 +25,6 @@ int formatFilter ();
 int format_to_function (char *format);
 /**/
 int printFunctions ();
-
 int printChar();
 int printNum();
 #endif

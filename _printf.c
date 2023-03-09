@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 		}
 		p++;
 		if (p == NULL)
-                        return (NULL);
+      return (NULL);
 		else if (p == 'c' || 's')
 			return (printChar);
 		else if (p == 'd' || 'i')
@@ -29,5 +29,4 @@ int _printf(const char *format, ...)
 		va_end(pointer);
 		return (i);
 	}
-
 }
