@@ -1,5 +1,5 @@
-#define MAIN_H
-#ifndef MAIN_H
+#define PRINTER_H
+#ifndef PRINTER_H
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -11,9 +11,16 @@ typedef struct print
 	void (*f)(char*, ...)
 } print_t;
 
-/*int arrPtr - is a pointer to a spot in the array held in format_to_functions*/
 int _printf (const char *format, ...);
-int formatFilter (int *format);
-int format_to_function (int *function);
-int printFunctions (int *arrPtr)
+/*accepts a character pointer from printf and calls formatFilter*/
+/*all accepts ANY argument sent to it by format_to_functions*/
+int formatFilter ();
+/*accepts the type of format determined by formatFilter and returns*/
+/*a pointer to the correct function in an array held inside printFunctions*/
+int format_to_function (char *format);
+/**/
+int printFunctions ();
+
+int printChar();
+int printNum();
 #endif
