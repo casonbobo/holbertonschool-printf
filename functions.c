@@ -9,7 +9,6 @@
 int print_char(va_list ap)
 {
 	_putchar(va_arg(ap, int));
-	_putchar("\n");
 	return (1);
 }
 
@@ -32,7 +31,6 @@ int print_str(va_list ap)
 			for (i = 0; str[i]; i++)
 				_putchar(str[i]);
 		}
-		_putchar("\n");
 		return (i);
 }
 
@@ -52,7 +50,6 @@ int print_int(va_list ap)
 		_putchar('-');
 		return (print_unsigned_int(-n) + 1);
 	}
-	_putchar("\n");
 	return (print_unsigned_int(n));
 }
 
