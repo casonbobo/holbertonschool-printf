@@ -1,32 +1,64 @@
 #include "main.h"
 
-int _printf(const char *format, ...)
-{
-	const char *p;
-	int i = 0;
-	va_list pointer;
+/**
+ *pick_func - decide what func will be used based on the letter
+ *@ap: a call to our list
+ *@c: the character after the '%'
+ *Return: 2 or a call the func to be used
+ */
 
-	if (!format)
-		return (-1);
+int pick_func(va_list ap, char c)
+{
+	int i;		/*an index for deciding the func to be used */
 	
-	va_start(pointer, format);
-	for (p = format; *p != NULL, p++)
+	format_t f[] =
+	{	{"c", print_char},
+		{"s", print_str},
+		{"d", print_int},
+		{"i", print_int},
+	};
+
+	for (i = 0; i < 4; i++)
+		if (*f[i].fmt == c)
+			return (f[i].func(ap));
+	_putchar('%');
+	_putchar(c);
+	return (2);
+}
+/**
+ *_printf - the main function that reads the arg and decides what will be done
+ *@format: this is the format for the structure
+ *Return: -1 if fail or the length of the string
+ */
+int _pritntf(const char *format, ...)
+{
+	va_list ap;
+	int i2 = 0; charCount = 0; 	/*i2 is an second index */
+					/*charCount counts the characters */
+
+	if (format == NULL || (format[i2] == '%' && !format[i2 + 1]))
+			return (-1);
+
+	va_start(ap, format);
+	for (i2 = 0; format[i2]; i2++)
 	{
-		if (*p != '%')
+		if (format[i2] == '%' && (format[i2 + 1] == '%'))
 		{
-			_putchar(*p, &i)
-			continue;
+			_putchar('%');
+			i2++;
+			charCount++;
 		}
-		p++;
-		if (p == NULL)
-      return (NULL);
-		else if (p == 'c' || 's')
-			return (printChar);
-		else if (p == 'd' || 'i')
-			return (printNum);
-		else if (p == '%')
-			return (printSym);
-		va_end(pointer);
-		return (i);
+		else if (format[i2] == '%')
+		{
+			charCount += pick_func(ap, format[i2 + 1]);
+			i2++;
+		}
+		else
+		{
+			charCount += 1;
+			_putchar(format[i2]);
+		}
 	}
+	va_end(ap);
+	return (charCount);
 }

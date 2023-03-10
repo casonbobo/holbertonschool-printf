@@ -5,26 +5,26 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <stddef.h>
+
  /**
- *struct printInput - is a stucture to
- *collect the stdout to print
- *@out: this is the output thats been collected
+ *struct format - structure that contains va_list
+ *@char: character
+ *@func: this is the output thats been collected
  */
 
-typedef struct printInput
+typedef struct format
 {
-	char *out;
-} print_t;
+	char fmt;
+	char (*func)(va_list ap);
+} format_t;
+
+/* prototypes */
 
 int _printf(const char *format, ...);
-/**accepts a character pointer from printf and calls formatFilter*/
-/*all accepts ANY argument sent to it by format_to_functions*/
-int formatFilter ();
-/*accepts the type of format determined by formatFilter and returns*/
-/*a pointer to the correct function in an array held inside printFunctions*/
-int format_to_function (char *format);
-/**/
-int printFunctions ();
-int printChar();
-int printNum();
+int pick_func(va_list ap, char c);
+int print_char(va_list ap);
+int print_str(va_list ap);
+int print_int(va_list ap);
+int print_unsigned_int(unsigned int n);
+int _putchar(char c);
 #endif
