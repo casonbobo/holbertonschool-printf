@@ -71,7 +71,7 @@ int _pow_recursion(int x, int y)
 		return (-1);
 	}
 	else
-	{	
+	{
 		return (x * _pow_recursion(x, y - 1));
 	}
 }
@@ -79,7 +79,8 @@ int _pow_recursion(int x, int y)
 /**
  *print_unsigned_int - prints unsigned integers
  *@n: unsigned integers to print
- *Return: adds 1 each recursion, adding towards the number of total digits printed
+ *Return: adds 1 each recursion,
+ *adding towards the number of total digits printed
  */
 
 int print_unsigned_int(unsigned int n)
