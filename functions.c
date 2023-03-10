@@ -24,14 +24,14 @@ int print_str(va_list ap)
 	int i;
 
 	if (str == NULL)
-	str = "(null)";
+		str = "(null)";
 
-		else
-		{
-			for (i = 0; str[i]; i++)
-				_putchar(str[i]);
-		}
-		return (i);
+	else
+	{
+		for (i = 0; str[i]; i++)
+			_putchar(str[i]);
+	}
+	return (i);
 }
 
 /**
