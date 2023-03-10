@@ -7,15 +7,15 @@
 #include <stddef.h>
 
  /**
- *struct format - structure that contains va_list
- *@char: character
- *@func: this is the output thats been collected
- */
+  * struct format - structure that contains va_list
+  * @char: character
+  * @func: this is the output thats been collected
+  */
 
 typedef struct format
 {
-	char fmt;
-	char (*func)(va_list ap);
+	char *fmt;
+	int (*func)(va_list ap);
 } format_t;
 
 /* prototypes */

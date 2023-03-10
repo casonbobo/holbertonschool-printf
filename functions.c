@@ -25,17 +25,17 @@ int print_str(va_list ap)
 
 	if (str == NULL)
 	str = "(null)";
-	
+
 		else
 		{
-			for (i = 0; str[i], i++)
+			for (i = 0; str[i]; i++)
 				_putchar(str[i]);
 		}
 		return (i);
 }
 
 /**
- *print_int - prints integers 
+ *print_int - prints integers
  *@ap: va_list that holds arguments from main function
  *Return: number of integers printed
  */
