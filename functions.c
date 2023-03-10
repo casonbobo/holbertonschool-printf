@@ -86,7 +86,7 @@ int _pow_recursion(int x, int y)
 int print_unsigned_int(unsigned int n)
 {
 	int i;
-	int len = 1;
+	int len = 0;
 	unsigned int n2 = (n / 10);
 
 	while (n2 > 0)
