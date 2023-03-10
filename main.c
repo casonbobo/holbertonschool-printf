@@ -14,7 +14,7 @@ int main(void)
     unsigned int ui;
     void *addr;
 
-    len = _printf("Let's try to printf a simple sentence.\n");
+    len = _printf("Let's try to print some numbers 978689087657865435678654678\n");
     len2 = printf("Let's try to printf a simple sentence.\n");
     ui = (unsigned int)INT_MAX + 1024;
     addr = (void *)0x7ffe637541f0;
@@ -32,8 +32,8 @@ int main(void)
     printf("Character:[%c]\n", 'H');
     _printf("String:[%s]\n", "I am a string !");
     printf("String:[%s]\n", "I am a string !");
-    _printf("Address:[%p]\n", addr);
-    printf("Address:[%p]\n", addr);
+    _printf("Address:[% ]\n", addr);
+    printf("Address:[% ]\n", addr);
     len = _printf("Percent:[%%]\n");
     len2 = printf("Percent:[%%]\n");
     _printf("Len:[%d]\n", len);
