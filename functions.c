@@ -86,7 +86,7 @@ int print_unsigned_int(unsigned int n)
 {
 	int i;
 	int len = 1;
-	unsinged int n2 = (n / 10);
+	unsigned int n2 = (n / 10);
 
 	while (n2 > 0)
 	{
@@ -94,7 +94,7 @@ int print_unsigned_int(unsigned int n)
 		n2 = (n2 / 10);
 	}
 
-	for (i = lenl i >= 0; i--)
+	for (i = len; i >= 0; i--)
 	{
 		_putchar(n / _pow_recursion(10, i) + '0');
 		n = (n % _pow_recursion(10, i));
