@@ -5,12 +5,11 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <stddef.h>
-
- /**
-  * struct format - structure that contains va_list
-  * @char: character
-  * @func: this is the output thats been collected
-  */
+/**
+ *struct format - structure that contains and passes our args
+ *@fmt: the format character to be passed in between func
+ *@func: this is the output thats been collected
+ */
 
 typedef struct format
 {

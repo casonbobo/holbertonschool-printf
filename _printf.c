@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  *pick_func - decide what func will be used based on the letter
  *@ap: a call to our list that contains the args
