@@ -1,0 +1,64 @@
+./MAN PAGE FOR _PRINTF
+.TH _printf
+.DD 3/10/2023
+
+.SH NAME
+.B _printf
+\
+- format and print data
+
+.SH SYNOPSIS
+.B #include main.h
+.B _printf (const char *
+.I format
+.B , ...);
+
+.SH DESCRIPTION
+The Function
+.B _printf
+acts like traditional printf
+
+.SH SPECIFIERS
+Specifiers define how arguments will convert for output.
+, a '%' sign is followed by one or more of the following characters:
+.IP s
+This prints a string
+.IP c
+This prints a single character
+.IP i,d
+Prints a number
+
+.SH DESCRIPTION
+The Function
+.B _printf
+acts like traditional printf
+
+.SH SPECIFIERS
+Specifiers define how arguments will convert for output.
+, a '%' sign is followed by one or more of the following characters:
+.IP s
+This prints a string
+.IP c
+This prints a single character
+.IP i,d
+Prints a number
+
+.SH RETURN
+When successful,
+.B _printf
+function will return the number of characters printed.
+.PP
+Upon failure or error, -1 is returned.
+
+.SH EXAMPLE
+To print "My birthday was March 3, which was 10 days ago" where
+.I weekday
+and
+.I month
+are pointers to strings: 
+.IP 
+_printf(stdout, %s, %s, %s, %d, %s, %s, %d, %s, %s);
+
+.SH AUTHORS
+The people who colaborated on this code were Cason Bobo (cute) and Evan Newman (cuter).
+
