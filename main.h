@@ -27,4 +27,5 @@ int print_int(va_list ap);
 int print_unsigned_int(unsigned int n);
 int _pow_recursion(int x, int y);
 int _putchar(char c);
+void test(void);
 #endif

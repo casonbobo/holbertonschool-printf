@@ -25,7 +25,6 @@ int print_str(va_list ap)
 
 	if (str == NULL)
 		str = "(null)";
-
 	else
 	{
 		for (i = 0; str[i]; i++)
@@ -86,7 +85,7 @@ int _pow_recursion(int x, int y)
 int print_unsigned_int(unsigned int n)
 {
 	int i;
-	int len = 0;
+	int len = 1;
 	unsigned int n2 = (n / 10);
 
 	while (n2 > 0)
@@ -95,7 +94,7 @@ int print_unsigned_int(unsigned int n)
 		n2 = (n2 / 10);
 	}
 
-	for (i = len; i >= 0; i--)
+	for (i = len - 1; i >= 0; i--)
 	{
 		_putchar(n / _pow_recursion(10, i) + '0');
 		n = (n % _pow_recursion(10, i));
