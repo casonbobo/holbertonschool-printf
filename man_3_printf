@@ -1,6 +1,6 @@
 ./MAN PAGE FOR _PRINTF
-.TH _printf
-.DD 3/10/2023
+.Dt _printf 3
+.Dd 3/10/2023
 
 .SH NAME
 .B _printf
@@ -51,13 +51,12 @@ function will return the number of characters printed.
 Upon failure or error, -1 is returned.
 
 .SH EXAMPLE
-To print "My birthday was March 3, which was 10 days ago" where
+To print... printf("My %s was March %i, which was %s days ago", string1, num1, num2)
 .I weekday
 and
 .I month
 are pointers to strings: 
-.IP 
-_printf(stdout, %s, %s, %s, %d, %s, %s, %d, %s, %s);
+.IP
 
 .SH AUTHORS
 The people who colaborated on this code were Cason Bobo (cute) and Evan Newman (cuter).
